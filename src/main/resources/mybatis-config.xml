@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	 <settings>
+        <setting name="logImpl" value="LOG4J"/>        
+    </settings>
+    
+	<!--
+		servidor = 10.2.65.6
+                namebd = control
+		user = control
+                password = control20101
+		puerto = 3306	
+	-->
+	<typeAliases>
+        <typeAlias type='lab.eci.ocupados.entites.Computer' alias='Computer'/>
+    </typeAliases>
+	
+
+	<environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>        
+                <property name="url" value="jdbc:mysql://laboratorio.is.escuelaing.edu.co:3306/control"/>
+                <property name="username" value="control" />
+                <property name="password" value="control20101" />            	
+            </dataSource>
+        </environment>
+    </environments>
+	
+
+	<mappers>
+    	<mapper resource="mappers/ComputerMapper.xml"></mapper>
+    </mappers>
+    
+</configuration>
